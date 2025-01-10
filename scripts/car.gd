@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var ball = $Ball
-@onready var car_mesh = $Boat
+@onready var boat_mesh = $Boat
 @onready var ground_ray = $Boat/RayCast3D
 @onready var body_mesh = $"Boat/boat-row-large"
 
@@ -25,9 +25,9 @@ func _ready() -> void:
 	ground_ray.add_exception(ball)
 
 func _physics_process(delta: float) -> void:
-	car_mesh.transform.origin = ball.transform.origin + sphere_offset
+	boat_mesh.transform.origin = ball.transform.origin + sphere_offset
 	# apply physics in direction mesh is facing
-	ball.apply_central_force(car_mesh.global_transform.basis.z * speed_input)
+	ball.apply_central_force(boat_mesh.global_transform.basis.z * speed_input)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -47,11 +47,11 @@ func _process(delta: float) -> void:
 	
 	# rotate car mesh
 	if ball.linear_velocity.length() > turn_stop_limit:
-		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y,
+		var new_basis = boat_mesh.global_transform.basis.rotated(boat_mesh.global_transform.basis.y,
 				rotate_input)
-		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis,
+		boat_mesh.global_transform.basis = boat_mesh.global_transform.basis.slerp(new_basis,
 				turn_speed * delta)
-		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
+		boat_mesh.global_transform = boat_mesh.global_transform.orthonormalized()
 		
 		# tilt body for effect
 		var t = -rotate_input * ball.linear_velocity.length() / body_tilt_x
@@ -64,8 +64,8 @@ func _process(delta: float) -> void:
 	
 	# align with ground
 	var n = ground_ray.get_collision_normal()
-	var xform = align_with_y(car_mesh.global_transform, n.normalized())
-	car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10 * delta)
+	var xform = align_with_y(boat_mesh.global_transform, n.normalized())
+	boat_mesh.global_transform = boat_mesh.global_transform.interpolate_with(xform, 10 * delta)
 
 func align_with_y(xform, new_y):
 	xform.basis.y = new_y
