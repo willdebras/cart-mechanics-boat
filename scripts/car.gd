@@ -8,7 +8,7 @@ extends Node3D
 @export var sphere_offset = Vector3(0, -0.5, 0)
 @export var acceleration = 50
 @export var max_speed = 200
-@export var steering = 21.0
+@export var steering = 10.0
 @export var turn_speed = 5
 @export var turn_stop_limit = 0.75
 @export var body_tilt_x = 10
@@ -55,7 +55,6 @@ func _process(delta: float) -> void:
 		
 		# tilt body for effect
 		var t = -rotate_input * ball.linear_velocity.length() / body_tilt_x
-		print(ball.linear_velocity)
 		body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 10 * delta)
 		body_mesh.rotation.z = clamp(body_mesh.rotation.z, deg_to_rad(-20), deg_to_rad(20))
 		var z = (-speed_input) / 1000 * ball.linear_velocity.length() / body_tilt_y

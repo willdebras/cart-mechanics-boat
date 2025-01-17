@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1tfwj4h5nlcx"]
+[gd_scene load_steps=6 format=3 uid="uid://d1tfwj4h5nlcx"]
 
 [ext_resource type="PackedScene" uid="uid://c1l618a0spai2" path="res://assets/kenney_pirate-kit/Models/FBX format/boat-row-large.fbx" id="1_40hut"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="1_wnud1"]
-[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="3_2mvyh"]
 [ext_resource type="Script" path="res://scripts/camera_pivot.gd" id="3_g857l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0gkqb"]
@@ -22,12 +21,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 [node name="RayCast3D" type="RayCast3D" parent="Boat"]
 
 [node name="camera_pivot" type="Node3D" parent="Boat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.515384, 0)
 script = ExtResource("3_g857l")
 
 [node name="Camera3D" type="Camera3D" parent="Boat/camera_pivot"]
-transform = Transform3D(-0.994767, -2.97439e-08, 8.17207e-08, 0, 0.934775, 0.34023, -8.69653e-08, 0.34023, -0.934775, 0, 1.7, -4.47)
+transform = Transform3D(-0.994767, -2.97439e-08, 8.17207e-08, 0, 0.934775, 0.34023, -8.69653e-08, 0.34023, -0.934775, 0, 1.7, -4.47022)
 fov = 59.0625
-script = ExtResource("3_2mvyh")
 
 [node name="Ball" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000320435, 0.0121155, -0.000109196)

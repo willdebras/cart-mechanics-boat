@@ -6,7 +6,7 @@
 [node name="Game" type="Node3D"]
 
 [node name="CarExample" parent="." instance=ExtResource("1_uy87a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="TestScene" parent="." instance=ExtResource("2_aw840")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
