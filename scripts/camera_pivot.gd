@@ -3,8 +3,8 @@ extends Node3D
 var direction = Vector3.FORWARD
 
 const JOY_DEADZONE : float = 0.25
-const JOY_V_SENS : float = 0.2
-const JOY_H_SENS : float = 0.2
+const JOY_V_SENS : float = 0.4
+const JOY_H_SENS : float = 0.4
 const JOY_AXIS_2 : int = 2
 const JOY_AXIS_3 : int = 3
 
@@ -36,17 +36,19 @@ func _input(event):
 		rotate_object_local(Vector3(1, 0, 0), rot_y) # then rotate in X
 		
 	if event is InputEventJoypadMotion and has_controller:
-		print(event.get_axis())
 		if event.get_axis() == JOY_AXIS_2:
 			if abs(event.get_axis_value()) > JOY_DEADZONE:
-				rotation.y = (event.get_axis_value() * JOY_H_SENS)
+				rotation.y = lerp(rotation.y, (event.get_axis_value() * JOY_H_SENS), 0.3)
 			else:
-				rotation.y = 0
+				#rotation.y = 0
+				rotation.y = lerp(rotation.y, 0.0, 0.4)
 		elif event.get_axis() == JOY_AXIS_3:
 			if abs(event.get_axis_value()) > JOY_DEADZONE:
-				rotation.x = (event.get_axis_value() * JOY_V_SENS)
+				#rotation.x = (event.get_axis_value() * JOY_V_SENS)
+				rotation.x = lerp(rotation.x, (event.get_axis_value() * JOY_V_SENS), 0.3)
 			else:
-				rotation.x = 0
+				#rotation.x = 0
+				rotation.x = lerp(rotation.x, 0.0, 0.4)
 				
 #func _physics_process(delta: float) -> void:
 	#var current_velocity = get_parent().get_parent().get_node('Ball').get_linear_velocity()
