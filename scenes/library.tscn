@@ -1,3 +1,48 @@
-[gd_scene format=3 uid="uid://chpxw7ye38vyc"]
+[gd_scene load_steps=12 format=3 uid="uid://chpxw7ye38vyc"]
+
+[ext_resource type="PackedScene" uid="uid://c1xd780auobts" path="res://assets/tile_sand.glb" id="1_3v82p"]
+[ext_resource type="PackedScene" uid="uid://b4miihhvfooxn" path="res://assets/tile_corner.glb" id="2_8nqq5"]
+[ext_resource type="PackedScene" uid="uid://cx58huc4qhud2" path="res://assets/tile_corner_1.glb" id="3_8xwws"]
+[ext_resource type="PackedScene" uid="uid://cbl8lu6n065l4" path="res://assets/tile_corner_2.glb" id="4_o8o8j"]
+[ext_resource type="PackedScene" uid="uid://p6ms7081l5st" path="res://assets/tile_corner_3.glb" id="5_o550p"]
+[ext_resource type="PackedScene" uid="uid://b18flot25upxt" path="res://assets/tile_extra_wide_edge.glb" id="6_h7k3w"]
+[ext_resource type="PackedScene" uid="uid://cihhcn4txkl7l" path="res://assets/tile_extra_wide_extrude_1.glb" id="7_aimnc"]
+[ext_resource type="PackedScene" uid="uid://c0cx6wvkwj0ql" path="res://assets/tile_extra_wide_extrude_2.glb" id="8_k66gm"]
+[ext_resource type="PackedScene" uid="uid://cepcilvoqp5fm" path="res://assets/tile_thin_edge.glb" id="9_m8y5m"]
+[ext_resource type="PackedScene" uid="uid://cm3r2nt4wkbb2" path="res://assets/tile_thin_to_wide_edge.glb" id="10_tdnid"]
+[ext_resource type="PackedScene" uid="uid://d35gwfiaqq407" path="res://assets/tile_wide_edge.glb" id="11_brxbm"]
 
 [node name="Library" type="Node3D"]
+
+[node name="tile_sand" parent="." instance=ExtResource("1_3v82p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00243, 0, -0.00177598)
+
+[node name="tile_corner" parent="." instance=ExtResource("2_8nqq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03834, 0, 0.0179311)
+
+[node name="tile_corner_1" parent="." instance=ExtResource("3_8xwws")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.09425, 0, -0.00464046)
+
+[node name="tile_extra_wide_edge" parent="." instance=ExtResource("6_h7k3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.88416, 0, -0.0782821)
+
+[node name="tile_extra_wide_extrude_1" parent="." instance=ExtResource("7_aimnc")]
+transform = Transform3D(0.99999, -0.00197278, 0.00393893, 0.00197611, 0.999998, -0.000840236, -0.00393726, 0.000848022, 0.999992, 3.23818, 0.00409126, -0.0547723)
+
+[node name="tile_extra_wide_extrude_2" parent="." instance=ExtResource("8_k66gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34493, 0.0190382, -0.0477737)
+
+[node name="tile_thin_edge" parent="." instance=ExtResource("9_m8y5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40452, 0.0325413, -0.0460793)
+
+[node name="tile_thin_to_wide_edge" parent="." instance=ExtResource("10_tdnid")]
+transform = Transform3D(0.999937, -0.000898941, 0.0111686, 0.000898704, 1, 2.62387e-05, -0.0111687, -1.61899e-05, 0.999938, 9.673, 0, 0.0326576)
+
+[node name="tile_wide_edge" parent="." instance=ExtResource("11_brxbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8407, 0, 0.0693104)
+
+[node name="tile_corner_2" parent="." instance=ExtResource("4_o8o8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33527, 0, -0.0192031)
+
+[node name="tile_corner_3" parent="." instance=ExtResource("5_o550p")]
+transform = Transform3D(0.999425, -0.0100918, 0.0323743, 0.0100627, 0.999949, 0.00106293, -0.0323834, -0.000736546, 0.999475, -7.59106, 0, -0.0245787)
